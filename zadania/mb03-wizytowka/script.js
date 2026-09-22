@@ -37,3 +37,13 @@ formularz.addEventListener("submit", function (event) {
 
   formularz.reset();
 });
+
+let licznik = 0;
+
+const przycisk = document.querySelector("#przycisk");
+const wynik = document.querySelector("#wynik");
+
+przycisk.addEventListener("click", function () {
+  licznik++;
+  wynik.textContent = `Liczba kliknięć: ${licznik}`;
+});
