@@ -27,8 +27,30 @@
         </section>
         <section id="kontakt">
             <h2>Kontakt</h2>
-            <p>Możesz się z nami skontaktować poprzez e-mail: jan.kowalski@example.com</p>
-        </section>
+
+            <form>
+                <label for="imie">Imię</label>
+                <input type="text" id="imie" name="imie">
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email">
+
+                <label for="temat">Temat</label>
+                <select id="temat" name="temat">
+                    <option value="pytanie">Pytanie</option>
+                    <option value="wspolpraca">Współpraca</option>
+                    <option value="inne">Inne</option>
+                </select>
+
+                <label for="tresc">Wiadomość</label>
+                <textarea id="tresc" name="tresc"></textarea>
+
+                <button type="submit">Wyślij</button>
+            </form>
+
+    <div id="komunikat"></div>
+</section>
+
     </main>
     <footer>
         2026 zadanie z przedmiotu
