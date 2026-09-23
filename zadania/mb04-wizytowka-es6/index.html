@@ -1,0 +1,63 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        JB, lubię jesc
+    </header>
+    <nav>
+        <a href="#o-mnie">O mnie</a>
+        <a href="#umiejetnosci">Umiejętności</a>
+        <a href="#kontakt">Kontakt</a>
+    </nav>
+    <main>
+        <section id="o-mnie">
+            <h2>O mnie</h2>
+            <p>Jestem programistą z pasją do tworzenia stron internetowych. Lubię uczyć się nowych technologii i rozwijać swoje umiejętności.</p>
+        </section>
+        <section id="umiejetnosci">
+            <h2>Umiejętności</h2>
+            <p>Posiadam doświadczenie w programowaniu w językach JavaScript, Python i Java. Znam również technologie webowe takie jak HTML, CSS i React.</p>
+            <ul id="lista-umiejetnosci"></ul>
+        </section>
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+
+            <form>
+                <label for="imie">Imię</label>
+                <input type="text" id="imie" name="imie">
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email">
+
+                <label for="temat">Temat</label>
+                <select id="temat" name="temat">
+                    <option value="pytanie">Pytanie</option>
+                    <option value="wspolpraca">Współpraca</option>
+                    <option value="inne">Inne</option>
+                </select>
+
+                <label for="tresc">Wiadomość</label>
+                <textarea id="tresc" name="tresc"></textarea>
+
+                <button type="submit">Wyślij</button>
+            </form>
+
+    <div id="komunikat"></div>
+    <h3>Licznik kliknięć</h3>
+    <button type="button" id="przycisk">Kliknij mnie</button>
+    <p id="wynik">Liczba kliknięć: 0</p>
+</section>
+
+    </main>
+    <footer>
+        2026 zadanie z przedmiotu
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
