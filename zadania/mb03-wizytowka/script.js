@@ -14,11 +14,10 @@ for (const umiejetnosc of umiejetnosci) {
   lista.appendChild(li);
 }
 
-
 const formularz = document.querySelector("form");
 const komunikat = document.querySelector("#komunikat");
 
-formularz.addEventListener("submit", function (event) {
+formularz.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const imie = document.querySelector("#imie").value;
@@ -43,7 +42,7 @@ let licznik = 0;
 const przycisk = document.querySelector("#przycisk");
 const wynik = document.querySelector("#wynik");
 
-przycisk.addEventListener("click", function () {
+przycisk.addEventListener("click", () => {
   licznik++;
   wynik.textContent = `Liczba kliknięć: ${licznik}`;
 });
