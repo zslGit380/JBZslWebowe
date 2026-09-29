@@ -1,16 +1,15 @@
 const umiejetnosci = [
-  "JavaScript",
-  "HTML",
-  "CSS",
-  "React",
-  "Git"
+  { nazwa: "HTML", poziom: 4, kategoria: "frontend" },
+  { nazwa: "CSS", poziom: 3, kategoria: "frontend" },
+  { nazwa: "JavaScript", poziom: 3, kategoria: "frontend" },
+  { nazwa: "SQL", poziom: 2, kategoria: "backend" }
 ];
 
 const lista = document.querySelector("#lista-umiejetnosci");
 
 for (const umiejetnosc of umiejetnosci) {
   const li = document.createElement("li");
-  li.textContent = umiejetnosc;
+  li.textContent = umiejetnosc.nazwa;
   lista.appendChild(li);
 }
 
