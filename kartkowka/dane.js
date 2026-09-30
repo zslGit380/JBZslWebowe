@@ -11,7 +11,6 @@
 
    Nie zmieniaj danych w tym pliku.
    ========================================================= */
-
 const gry = [
     { tytul: "Cyberpunk",   cena: 129, ocena: 8 },
     { tytul: "Wiedźmin 3",  cena:  79, ocena: 10 },

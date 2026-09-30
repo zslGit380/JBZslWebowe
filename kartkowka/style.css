@@ -1,0 +1,9 @@
+#lista{
+    display: flex;
+    gap: 20;
+    flex-direction: column;
+}
+
+.wyrozniony{
+    color: red;
+}
