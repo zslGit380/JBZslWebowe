@@ -1,5 +1,6 @@
 import express from "express";
 import { gry } from "./dane.js";
+import routerGier from "./trasy/gry.js";
 
 const app = express();
 
@@ -10,6 +11,8 @@ const logger = (req, res, next) => {
 };
 
 app.use(logger);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.send(`
@@ -23,21 +26,7 @@ app.get("/", (req, res) => {
   `);
 });
 
-app.get("/gry", (req, res) => {
-  res.json(gry);
-});
-
-app.get("/gry/:id", (req, res) => {
-  const szukane = Number(req.params.id);
-  const gra = gry.find((g) => g.id === szukane);
-
-  if (!gra) {
-    res.status(404).json({ blad: "Nie ma gry o takim numerze" });
-    return;
-  }
-
-  res.json(gra);
-});
+app.use("/gry", routerGier);
 
 app.get("/szukaj", (req, res) => {
   const { wydawca, max, gracze } = req.query;
@@ -74,6 +63,19 @@ app.get("/statystyki", (req, res) => {
     sredniaCena: sredniaCena,
     najdrozsza: najdrozszaGra.nazwa
   });
+});
+
+app.use((req, res) => {
+  if (req.url.startsWith("/gry") || req.url.startsWith("/szukaj")) {
+    res.status(404).json({ blad: "Nie ma takiej trasy" });
+    return;
+  }
+  res.status(404).send("<h1>404 - nie ma takiej strony</h1>");
+});
+
+app.use((err, req, res, next) => {
+  console.error("Błąd:", err.message);
+  res.status(500).json({ blad: "Błąd serwera" });
 });
 
 app.listen(3000, () => {

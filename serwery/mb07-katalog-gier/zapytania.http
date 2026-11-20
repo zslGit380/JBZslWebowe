@@ -1,0 +1,10 @@
+@adres = http://localhost:3000
+
+### Dodanie gry JSON
+POST {{adres}}/gry
+Content-Type: application/json
+
+{
+  "nazwa": "Dixit",
+  "cena": 189
+}
