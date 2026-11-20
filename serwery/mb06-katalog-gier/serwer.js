@@ -50,6 +50,24 @@ app.get("/szukaj", (req, res) => {
   res.json(wynik);
 });
 
+app.get("/statystyki", (req, res) => {
+  const liczbaGier = gry.length;
+  
+  const sumaCen = gry.reduce((suma, g) => suma + g.cena, 0);
+  const srednia = sumaCen / liczbaGier;
+  const sredniaCena = Math.round(srednia * 100) / 100;
+
+  const najdrozszaGra = gry.reduce((najdrozsza, g) => {
+    return g.cena > najdrozsza.cena ? g : najdrozsza;
+  }, gry[0]);
+
+  res.json({
+    liczbaGier: liczbaGier,
+    sredniaCena: sredniaCena,
+    najdrozsza: najdrozszaGra.nazwa
+  });
+});
+
 app.listen(3000, () => {
   console.log("Serwer działa: http://localhost:3000");
 });
