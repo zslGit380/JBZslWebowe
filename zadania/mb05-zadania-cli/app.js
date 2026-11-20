@@ -15,7 +15,17 @@ switch (komenda) {
       });
     }
     break;
-    
+
+  case "dodaj":
+    if (!argument) {
+      console.log("Błąd: Podaj tekst zadania.");
+      process.exit(1);
+    }
+    const nowe = [...zadania, { tekst: argument, zrobione: false }];
+    await zapisz(nowe);
+    console.log("Dodano zadanie.");
+    break;
+
   default:
     console.log("Nieznana komenda.");
 }
