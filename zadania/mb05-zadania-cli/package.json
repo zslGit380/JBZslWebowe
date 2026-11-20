@@ -4,8 +4,10 @@
   "description": "",
   "type": "module",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+ "scripts": {
+    "lista": "node app.js lista",
+    "dodaj": "node app.js dodaj",
+    "zrobione": "node app.js zrobione"
   },
   "keywords": [],
   "author": "",
